@@ -14,7 +14,7 @@ from scipy.fft import fft, fftfreq
 
 # Fonction pour charger les données
 def load_data(file):
-    df = pd.read_csv(file, skiprows=1)  # Suppression de la première ligne
+    df = pd.read_csv(file, sep=";", skiprows=1)  # Suppression de la première ligne
     df.columns = ["time", "amplitude"]
     df["time"] = df["time"] / 1000  # Conversion en secondes
     return df
